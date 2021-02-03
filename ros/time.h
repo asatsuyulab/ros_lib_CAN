@@ -54,6 +54,10 @@ public:
     normalizeSecNSec(sec, nsec);
   }
 
+  double round(double number)
+  {
+    return number < 0.0 ? ceil(number - 0.5): floor(number + 0.5);
+  };
   double toSec() const
   {
     return (double)sec + 1e-9 * (double)nsec;
